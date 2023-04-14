@@ -5,3 +5,9 @@ export const getUsers = async () => {
   
   return response.data;
 };
+
+export const getUsersQtd = async () => {
+  const response = await api.get('/?results=10');
+  
+  return response.data
+}
