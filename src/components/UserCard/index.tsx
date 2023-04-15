@@ -22,7 +22,7 @@ export function UserCard({ user }: UserProps) {
   return (
     <div
       className='h-[29rem] w-11/12 lg:h-3/6 md:h-5/6 sm:h-3/4 lg:w-3/5 md:w-3/4 sm:w-4/5
-       bg-white shadow-2xl rounded-md mt-10'>
+       bg-white dark:bg-neutral-800 dark:text-white shadow-2xl rounded-md mt-10'>
       <div
         key={user?.login.uuid}
         className='flex flex-col justify-around items-center

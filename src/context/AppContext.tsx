@@ -6,11 +6,15 @@ export interface AppContextValue {
   setUser:
     | React.Dispatch<React.SetStateAction<IUsers[] | undefined>>
     | undefined;
+  theme: string;
+  setTheme: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const AppContext = createContext<AppContextValue>({
   user: undefined,
   setUser: undefined,
+  theme: '',
+  setTheme: () => undefined,
 });
 
 export interface AppProviderProps {
@@ -19,9 +23,13 @@ export interface AppProviderProps {
 
 export function AppProvider({ children }: AppProviderProps) {
   const [user, setUser] = useState<IUsers[] | undefined>(undefined);
+  const [theme, setTheme] = useState('');
+
   const dataContext = {
     user,
     setUser,
+    theme,
+    setTheme,
   };
 
   return (
