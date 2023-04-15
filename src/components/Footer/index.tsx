@@ -1,20 +1,10 @@
-import { useQueryClient } from "react-query";
+import { Carousel } from '../Carousel';
 
 export function Footer() {
-  const queryClient = useQueryClient();
-
   return (
-    <div
-      className='flex flex-col items-center justify-end
-      w-screen h-72 absolute bottom-0 bg-zinc-100'>
-      <div>
-        <button
-          type='button'
-          onClick={() => queryClient.invalidateQueries('user-list')}
-          className='bg-lime-500'>
-          Próximo Usuário
-        </button>
-      </div>
-    </div>
+    <footer className='flex flex-col items-center flex-1 w-full h-64 bg-zinc-100'>
+      <h1 className='mt-3 text-lg font-medium'>Perfis recomendados</h1>
+      <Carousel />
+    </footer>
   );
 }
