@@ -4,7 +4,6 @@ import { App } from './App';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { AppProvider } from './context/AppContext';
 import { BrowserRouter } from 'react-router-dom';
-
 import './styles/global.css';
 
 const queryClient = new QueryClient({
