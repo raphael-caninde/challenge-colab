@@ -1,15 +1,30 @@
-import { createContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useState } from 'react';
 import { IUsers } from '../interfaces/IUser';
 
-export const AppContext = createContext<IUsers | null>(null);
+export interface AppContextValue {
+  user: IUsers[] | undefined;
+  setUser:
+    | React.Dispatch<React.SetStateAction<IUsers[] | undefined>>
+    | undefined;
+}
 
-export function AppProvider({ children }: any) {
-  const [user, setUser] = useState<IUsers[]>([]);
+export const AppContext = createContext<AppContextValue>({
+  user: undefined,
+  setUser: undefined,
+});
 
-  const data = {
+export interface AppProviderProps {
+  children: ReactNode;
+}
+
+export function AppProvider({ children }: AppProviderProps) {
+  const [user, setUser] = useState<IUsers[] | undefined>(undefined);
+  const dataContext = {
     user,
-    setUser
+    setUser,
   };
 
-  return <AppContext.Provider value={data}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={dataContext}>{children}</AppContext.Provider>
+  );
 }
