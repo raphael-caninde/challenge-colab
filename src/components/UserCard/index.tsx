@@ -28,7 +28,7 @@ export function UserCard({ user }: UserProps) {
         <img
           src={user.picture.large}
           alt=''
-          className='rounded-full w-60'
+          className='rounded-full md:w-60 sm:w-36'
         />
         <div
           className='flex flex-col items-center gap-4 w-full md:w-2/4 lg:w-3/4
