@@ -6,14 +6,14 @@ import { AppContext } from '../../context/AppContext';
 export function DarkMode() {
   const { theme, setTheme } = useContext(AppContext);
 
-  function testeTheme() {
+  function handleTheme() {
     const newTheme = theme === '' ? 'dark' : '';
     setTheme(newTheme);
   }
 
   return theme === 'dark' ? (
     <div
-      onClick={testeTheme}
+      onClick={handleTheme}
       className='self-end mt-4 mr-10 hidden sm:flex items-center cursor-pointer
               bg-gradient-to-r from-yellow-300 to-yellow-600
               w-14 lg:w-20 h-8 p-1 rounded-full'>
@@ -28,7 +28,7 @@ export function DarkMode() {
     </div>
   ) : (
     <div
-      onClick={testeTheme}
+      onClick={handleTheme}
       className={`
             self-end mt-4 mr-10 hidden sm:flex items-center justify-end cursor-pointer
             bg-gradient-to-r from-gray-500 to-gray-900
