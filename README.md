@@ -5,7 +5,7 @@ Este é um projeto desenvolvido para o desafio técnico do processo seletivo da 
 O desafio consiste em consumir uma API de usuários e exibe seus dados.
 
  Um dos desafios que enfrentei no projeto foi utilizar uma nova biblioteca de carrosel a `swiper`, onde tive que explorar mas a documentação
-para estilizar, fazer toda a parte de responsividade e utilizar seus métodotos
+para estilizar, fazer toda a parte de responsividade e utilizar seus métodos.
 
 
 ## Instalação :gear:
